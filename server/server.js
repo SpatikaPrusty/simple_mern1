@@ -42,7 +42,7 @@ app.post('/product', (req,res,next) => {
     res.status(201).json({message: 'Created product', product: createdProduct});
 })
 
-const PORT = 5002;
+const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`App is running on ${PORT}`);
 });
