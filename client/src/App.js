@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
-      const response = await fetch('http://localhost:5000/products');
+      const response = await fetch('http://a80daadfdd52b4d119b5cd0652fa2947-432853782.ap-south-1.elb.amazonaws.com:5000/products');
 
       const responseData = await response.json();
 
@@ -30,7 +30,7 @@ function App() {
         price: +productPrice 
       };
       let hasError = false;
-      const response = await fetch('http://localhost:5000/product', {
+      const response = await fetch('http://a80daadfdd52b4d119b5cd0652fa2947-432853782.ap-south-1.elb.amazonaws.com:5000/product', {
         method: 'POST',
         body: JSON.stringify(newProduct),
         headers: {
