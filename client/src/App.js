@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
-      const response = await fetch('http://localhost:5000/products');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
 
       const responseData = await response.json();
 
@@ -30,7 +30,7 @@ function App() {
         price: +productPrice 
       };
       let hasError = false;
-      const response = await fetch('http://localhost:5000/product', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/product`, {
         method: 'POST',
         body: JSON.stringify(newProduct),
         headers: {
